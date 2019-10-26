@@ -1,4 +1,33 @@
-baseURL = "http://example.org/"
+baseURL = "/"
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "kraiklyn"
+title = "Riser Platform"
+theme = "whisper"
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+pygmentsUseClasses = true
+
+summaryLength = 30
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Docs"
+    url = "/docs/"
+    weight = 2
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/riser-platform/riser"
+    weight = 3
+
+
+[params]
+  homepage_button_link = '/docs'
+  homepage_button_text = 'Read The Docs'
+  homepage_intro = 'An opinionated app platform built on Kubernetes'
+
+[params.logo]
+  mobile = "/images/logo-mobile.svg"
+  standard  = "/images/logo.svg"
