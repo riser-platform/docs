@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Whisper Docs on Riser Platform</title>
+    <title>Riser Platform</title>
     <link>/</link>
-    <description>Recent content in Hugo Whisper Docs on Riser Platform</description>
+    <description>Recent content on Riser Platform</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate>
@@ -46,7 +46,7 @@ Install theme Copy or git clone this theme into the sites themes folder mynewsit
       <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
       
       <guid>/docs/specimen/</guid>
-      <description>Markdown Test Page  Headings Paragraphs Blockquotes Lists Horizontal rule Table Code Inline elements  Headings Heading one Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim qui mollit tempor pariatur nisi minim dolor.</description>
+      <description>Markdown Test Page  Headings Paragraphs Blockquotes Lists Horizontal rule Table Code Inline elements   Headings Heading one Sint sit cillum pariatur eiusmod nulla pariatur ipsum. Sit laborum anim qui mollit tempor pariatur nisi minim dolor.</description>
     </item>
     
     <item>
@@ -64,8 +64,8 @@ Install theme Copy or git clone this theme into the sites themes folder mynewsit
       <pubDate>Thu, 24 Oct 2019 15:27:51 +0200</pubDate>
       
       <guid>/posts/my-first-post/</guid>
-      <description> Test Content ! Subsection This is a test
-1 2 3 4 5  this := &amp;#34;that&amp;#34; // Check this if this == &amp;#34;that&amp;#34; { return this }   name:myapp# TODO: Testid:abcdefgreplicas:2 name: test</description>
+      <description>Test Content ! Subsection This is a test
+1 2 3 4 5  this := &amp;#34;that&amp;#34; // Check this if this == &amp;#34;that&amp;#34; { return this }   name:myapp# TODO: Testid:abcdefgreplicas:2 name: test </description>
     </item>
     
   </channel>

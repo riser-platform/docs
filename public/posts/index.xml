@@ -17,8 +17,8 @@
       <pubDate>Thu, 24 Oct 2019 15:27:51 +0200</pubDate>
       
       <guid>/posts/my-first-post/</guid>
-      <description> Test Content ! Subsection This is a test
-1 2 3 4 5  this := &amp;#34;that&amp;#34; // Check this if this == &amp;#34;that&amp;#34; { return this }   name:myapp# TODO: Testid:abcdefgreplicas:2 name: test</description>
+      <description>Test Content ! Subsection This is a test
+1 2 3 4 5  this := &amp;#34;that&amp;#34; // Check this if this == &amp;#34;that&amp;#34; { return this }   name:myapp# TODO: Testid:abcdefgreplicas:2 name: test </description>
     </item>
     
   </channel>
