@@ -9,7 +9,8 @@ Riser is an opinionated app platform built on [Kubernetes](https://kubernetes.io
 
 [![asciicast](https://asciinema.org/a/277448.svg)](https://asciinema.org/a/277448?autoplay=1&cols=160&rows=40)
 
-{{< hint danger >}} This is an experimental project with the goal of improving how we deploy and manage common application workloads. You're invited to look around and provide feedback. It is not yet advised to use Riser in production. Breaking changes may occur frequently and without warning.
+{{< hint warning >}} :warning: _This is an experimental project. You're invited to look around and provide feedback.
+It is not yet advised to use Riser in production. Breaking changes may occur frequently and without warning._
 {{< /hint >}}
 
 ## Key Features
@@ -22,10 +23,18 @@ Riser is an opinionated app platform built on [Kubernetes](https://kubernetes.io
 - App developers only need access to Riser. Kubernetes cluster access is optional for advanced debugging or operational tasks
 
 
-## Known Issues and Limitations
+## Limitations
 
-- GitHub is the only validated git provider at this time. This is no GitHub specific code so it's likely that other providers will function reliably.
-- The documentation is very sparse. As features mature more documentation will be added.
+The Riser project is focused on exploring high value differentiating functionality.
+As a result, there are some limitations that you should be aware of. The plan is to
+address these limitations once a sufficient baseline of differentiating functionality
+has been explored.
+
+- While any git server should work, Riser has only been tested with GitHub.
+- The Riser CLI provides a Windows build but it is not actively being tested.
+- Authentication is limited to a single API key.
+- See the [Docker Images]({{< relref "/docs/concepts/docker_images.md" >}}) section for limitations regarding private Docker registries.
+
 
 
 
