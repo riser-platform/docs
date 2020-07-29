@@ -34,9 +34,7 @@ expose:
 {{< /expand >}}
 
 - `image` should be set to the registry/repository of your docker image.
-Do not include the docker tag. See the
-[docker images]({{< relref "/docs/concepts/docker_images.md" >}}) section for more
-information.
+Do not include the docker tag.
 - `expose.containerPort` should be set to the port that your app is listening on.
 Note that your app is exposed over 443 and TLS regardless of what port your app
 is listening on.

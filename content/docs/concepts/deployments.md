@@ -7,7 +7,7 @@ A _Deployment_ in Riser describes the desired state of a deployed _App_ to a giv
 The primary mechanism for deploying your _App_ is via the Riser CLI using the
 `riser deploy` command. Like Kubernetes, Riser works with [Docker](https://www.docker.com/).
 Riser does not build or publish Docker images for you. See the
-[Docker Images]({{< relref "/docs/concepts/docker_images.md" >}}) section for more information.
+[Docker]({{< relref "/docs/guidance/docker.md" >}}) section for more details.
 
 Assuming that you have already
 [created your app]({{< relref "/docs/concepts/apps.md" >}}) and built and published
@@ -52,7 +52,7 @@ regarding the state of your app.
 - _Env_: The name of the target [Environment]({{< relref "/docs/concepts/environments.md" >}})
 - _Traffic_: The percentage of traffic being routed to a particular _Deployment_ in a target _Environment_
 - _Rev_: The [Revision]({{< relref "/docs/concepts/deployments.md#revisions" >}}) number
-- _Docker Tag_: The [Docker]({{< relref "/docs/concepts/docker_images.md" >}}) tag
+- _Docker Tag_: The [Docker tag](https://docs.docker.com/glossary/#tag)
 - _Status_: A status representing the state of the deployment:
   - **Ready**: The deployment is ready to accept traffic
   - **Waiting**: The deployment is waiting for an operation to complete
@@ -70,7 +70,7 @@ contains the following state:
 - The docker tag
 - [Secrets]({{< relref "/docs/concepts/secrets.md" >}}) bound to your _App_
 
-[Docker image]({{< relref "/docs/concepts/docker_images.md" >}}). A _Revision_ is
+[Docker image]({{< relref "/docs/guidance/docker.md" >}}). A _Revision_ is
 assigned a unique revision number for a given _Deployment_ and _Environment_. This
 facilitates
 [Traffic Management]({{< relref "/docs/concepts/deployments.md#traffic-management" >}})
@@ -101,7 +101,7 @@ fixed or "rolled forward"
 
 {{< hint info >}}
 :information_source: _Remember that all operations that affect the state of your app
-go through [Git]({{< relref "/docs/concepts/gitops.md" >}}). As such, manual rollout
+go through [Git]({{< relref "/docs/internals/gitops.md" >}}). As such, manual rollout
  changes will take a few moments to apply._
 {{< /hint >}}
 
@@ -169,7 +169,7 @@ riser rollout dev r10:100
 
 ### Garbage Collection
 While this history of each _Revision_ will always be present in the
-[Git state repo]({{< relref "/docs/concepts/gitops.md" >}}), the _Revision_ itself will
+[Git state repo]({{< relref "/docs/internals/gitops.md" >}}), the _Revision_ itself will
 be garbage collected from the server based on criteria set by the platform operator.
 Typically at least 10 _Revisions_ will be preserved. Once a _Revision_ is garbage
 collected it is no longer visible to Riser.
@@ -222,7 +222,7 @@ riser deployments delete <deploymentName>
 {{< hint danger >}}
 :x: Danger Zone: _Deleting a Deployment deletes all associated
 Revisions along with it. You will still be able to review the history in
-[Git]({{< relref "/docs/concepts/gitops.md" >}}), but Riser does not provide any
+[Git]({{< relref "/docs/internals/gitops.md" >}}), but Riser does not provide any
 sort of "undelete" mechanism. You may always create a new Deployment with similar
 configuration, realizing that there are no guarantees that the Deployment will be
 in the same state_

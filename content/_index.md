@@ -19,7 +19,7 @@ It is not yet advised to use Riser in production. Breaking changes may occur fre
 - PaaS experience without vendor or cloud lock-in
 - Single view of apps across multiple environments (e.g. dev/test/prod)
 - Simplified secrets management
-- GitOps: All state changes happen through git
+- [GitOps](https://www.weave.works/technologies/gitops/): All state changes happen through git
 - App developers only need access to Riser. Kubernetes cluster access is optional for advanced debugging or operational tasks
 
 
@@ -33,9 +33,8 @@ has been explored.
 - While any git server should work, Riser has only been tested with GitHub.
 - The Riser CLI provides a Windows build but it is not actively being tested.
 - Authentication is limited to a single API key.
-- See the [Docker Images]({{< relref "/docs/concepts/docker_images.md" >}}) section for limitations regarding private Docker registries.
-
-
+- See the [Docker Images]({{< relref "/docs/guidance/docker.md" >}}) section for limitations regarding private Docker registries.
+- Operational guidance is sparse. The recommended way to explore Riser is with a single environment demo as documented in [the Quickstart]({{< relref "docs/quickstart" >}})
 
 
 {{< button relref="docs/quickstart" >}}Check out the Quickstart{{< /button >}}
