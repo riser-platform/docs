@@ -14,6 +14,5 @@ Riser does not yet support pod level `ImagePullSecrets`. If you have a private r
 mechanism which does not require the use of `ImagePullSecrets`. This is the recommended approach from both
 a maintainability as well as a security perspective.
 - If you control the Kubernetes cluster, consider [configuring the nodes to authenticate with the registry](https://kubernetes.io/docs/concepts/containers/images/#configuring-nodes-to-authenticate-to-a-private-registry)
-- You may also consider [attaching credentials to a service account](https://knative.dev/docs/serving/deploying/private-registry/). Note
-that this must be done for each Kubernetes namespace which requires access to the private registry.
+- You may also consider [attaching credentials to a service account](https://knative.dev/docs/serving/deploying/private-registry/). Note that this must be done for each Kubernetes namespace which requires access to the private registry.
 

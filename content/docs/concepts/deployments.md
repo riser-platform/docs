@@ -5,7 +5,7 @@ A _Deployment_ in Riser describes the desired state of a deployed _App_ to a giv
 
 ## Creating a Deployment
 The primary mechanism for deploying your _App_ is via the Riser CLI using the
-`riser deploy` command. Like Kubernetes, Riser works with [Docker](https://www.docker.com/).
+`riser deploy` command from inside of your app folder. Like Kubernetes, Riser works with [Docker](https://www.docker.com/).
 Riser does not build or publish Docker images for you. See the
 [Docker]({{< relref "/docs/guidance/docker.md" >}}) section for more details.
 
