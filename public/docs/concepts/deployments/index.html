@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Deployments #  A Deployment in Riser describes the desired state of a deployed App to a given Environment.
+Creating a Deployment #  The primary mechanism for deploying your App is via the Riser CLI using the riser deploy command from inside of your app folder. Like Kubernetes, Riser works with Docker. Riser does not build or publish Docker images for you. See the Docker section for more details.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Deployments #  A Deployment in Riser describes the desired state of a deployed App to a given Environment.
+Creating a Deployment #  The primary mechanism for deploying your App is via the Riser CLI using the riser deploy command from inside of your app folder. Like Kubernetes, Riser works with Docker. Riser does not build or publish Docker images for you. See the Docker section for more details." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://docs.riser.dev/docs/concepts/deployments/" />
+<meta property="article:modified_time" content="2020-07-31T11:58:34+02:00" />
+<title>Deployments | Riser Platform</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
+<script defer src="/en.search.min.3b26788883aaa6da97ae44247c6d81733498c568039fe8001d4a3c38fa85e103.js" integrity="sha256-OyZ4iIOqptqXrkQkfG2BczSYxWgDn&#43;gAHUo8OPqF4QM="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/logo.png" alt="Logo" /><span>Riser Platform</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quickstart/" class="">Quickstart</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <span>Concepts</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/apps/" class="">Apps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/deployments/" class="active">Deployments</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/environments/" class="">Environments</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/namespaces/" class="">Namespaces</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/secrets/" class="">Secrets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/url_routing/" class="">Url Routing</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <span>Guidance</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/guidance/docker/" class="">Docker</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/internals/" class="">Internals</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/internals/gitops/" class="">Gitops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/internals/secrets/" class="">Secrets</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/operations/" class="">Internals</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/riser-platform/riser" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Deployments</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-a-deployment">Creating a Deployment</a></li>
+    <li><a href="#deployment-status">Deployment Status</a>
+      <ul>
+        <li><a href="#status-columns">Status Columns</a></li>
+      </ul>
+    </li>
+    <li><a href="#revisions">Revisions</a>
+      <ul>
+        <li><a href="#automatic-rollout">Automatic Rollout</a></li>
+        <li><a href="#manual-rollout">Manual Rollout</a></li>
+        <li><a href="#garbage-collection">Garbage Collection</a></li>
+      </ul>
+    </li>
+    <li><a href="#named-deployments">Named Deployments</a></li>
+    <li><a href="#deleting-a-deployment">Deleting a Deployment</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="deployments">
+  Deployments
+  <a class="anchor" href="#deployments">#</a>
+</h1>
+<p>A <em>Deployment</em> in Riser describes the desired state of a deployed <em>App</em> to a given
+<a href="/docs/concepts/environments/">Environment</a>.</p>
+<h2 id="creating-a-deployment">
+  Creating a Deployment
+  <a class="anchor" href="#creating-a-deployment">#</a>
+</h2>
+<p>The primary mechanism for deploying your <em>App</em> is via the Riser CLI using the
+<code>riser deploy</code> command from inside of your app folder. Like Kubernetes, Riser works with <a href="https://www.docker.com/">Docker</a>.
+Riser does not build or publish Docker images for you. See the
+<a href="/docs/guidance/docker/">Docker</a> section for more details.</p>
+<p>Assuming that you have already
+<a href="/docs/concepts/apps/">created your app</a> and built and published
+your docker images, deploying an app with Riser is simple:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser deploy <span style="color:#f92672">(</span>docker tag<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>targetEnvironment<span style="color:#f92672">)</span>
+</code></pre></div><p>For example, if your docker tag is <code>v1.0</code> and your <a href="/docs/concepts/environments/">Environment</a>
+is <code>prod</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser deploy v1.0 prod
+</code></pre></div><blockquote class="book-hint info">
+  ℹ️ Most users will prefer to trigger a deployment from a CI/CD system
+instead of manually executing the command. The Riser CLI is a single binary making
+it easy to integrate with all popular CI/CD systems.
+</blockquote>
+
+<p>Once the <em>Deployment</em> is complete, you may access it using the URL format:
+<code>https://{deploymentName}.{namespace}.{riserdomain}</code>. Note that the <em>Deployment</em> name is the same as your <em>App</em> name by default.
+(e.g. for an app named <code>testdummy</code> in the <code>apps</code> namespace with an <em>Environment</em> configured with the <code>dev.mydomain.net</code> domain:
+<code>https://testdummy.apps.dev.mydomain.net</code>).
+See the <a href="/docs/concepts/url_routing/">URL Routing</a>
+section for more details.</p>
+<h2 id="deployment-status">
+  Deployment Status
+  <a class="anchor" href="#deployment-status">#</a>
+</h2>
+<p>Riser provides an app-centric view of your deployments across all
+<a href="/docs/concepts/environments/">Environments</a> using the
+<code>riser status</code> command. Its goal is to surface only the most pertinent information
+regarding the state of your app.</p>
+<p><img src="/riser_status.png" alt="riser status" /></p>
+<h3 id="status-columns">
+  Status Columns
+  <a class="anchor" href="#status-columns">#</a>
+</h3>
+<ul>
+<li><em>Deployment</em>: The name of the deployment</li>
+<li><em>Env</em>: The name of the target <a href="/docs/concepts/environments/">Environment</a></li>
+<li><em>Traffic</em>: The percentage of traffic being routed to a particular <em>Deployment</em> in a target <em>Environment</em></li>
+<li><em>Rev</em>: The <a href="/docs/concepts/deployments/#revisions">Revision</a> number</li>
+<li><em>Docker Tag</em>: The <a href="https://docs.docker.com/glossary/#tag">Docker tag</a></li>
+<li><em>Status</em>: A status representing the state of the deployment:
+<ul>
+<li><strong>Ready</strong>: The deployment is ready to accept traffic</li>
+<li><strong>Waiting</strong>: The deployment is waiting for an operation to complete</li>
+<li><strong>Unhealthy</strong>: The deployment is not healthy (e.g. can&rsquo;t pull the docker image, health check failed, etc)</li>
+<li><strong>Unknown</strong>: The deployment status is not known</li>
+</ul>
+</li>
+<li><em>Reason</em>: When applicable, provides a description of the current <em>Status</em></li>
+</ul>
+<h2 id="revisions">
+  Revisions
+  <a class="anchor" href="#revisions">#</a>
+</h2>
+<p>A <em>Revision</em> represents an immutable snapshot of your <em>Deployment</em>. A <em>Revision</em> is
+created whenever a <em>Deployment</em> is created (e.g. via <code>riser deploy</code>). A <em>Revision</em>
+contains the following state:</p>
+<ul>
+<li>The <em>App Config</em> with any environment overrides applied</li>
+<li>The docker tag</li>
+<li><a href="/docs/concepts/secrets/">Secrets</a> bound to your <em>App</em></li>
+</ul>
+<p><a href="/docs/guidance/docker/">Docker image</a>. A <em>Revision</em> is
+assigned a unique revision number for a given <em>Deployment</em> and <em>Environment</em>. This
+facilitates
+<a href="/docs/concepts/deployments/#traffic-management">Traffic Management</a>
+scenarios such as canary deployments and rollbacks. Note that there is no correlation
+between revision numbers in different environments or between different <em>Deployment</em>
+names.</p>
+<h3 id="automatic-rollout">
+  Automatic Rollout
+  <a class="anchor" href="#automatic-rollout">#</a>
+</h3>
+<p>By default, traffic is rolled out automatically when a new <em>Deployment</em> is created:</p>
+<ol>
+<li>A new <em>Revision</em> is created</li>
+<li>The new <em>Revision</em> is deployed using a
+<a href="https://martinfowler.com/bliki/BlueGreenDeployment.html">Blue Green deployment</a>. At this time no traffic is being routed to the <em>Revision</em></li>
+<li>Once determined to be healthy, 100% of traffic is immediately routed to the new <em>Revision</em></li>
+<li>After a period of time the old <em>Revision</em> is deemed inactive</li>
+</ol>
+<h3 id="manual-rollout">
+  Manual Rollout
+  <a class="anchor" href="#manual-rollout">#</a>
+</h3>
+<p>While an automatic rollout is sufficient for some use cases, there are reasons to
+employ a manual rollout:</p>
+<ul>
+<li><a href="https://martinfowler.com/bliki/CanaryRelease.html">Canary Deployments</a>: There is
+a desire to test the new <em>Deployment</em> on a subset of traffic before doing a full
+rollout.</li>
+<li>Rollback: There is a critical problem with a deployment that cannot be quickly
+fixed or &ldquo;rolled forward&rdquo;</li>
+</ul>
+<blockquote class="book-hint info">
+  ℹ️ <em>Remember that all operations that affect the state of your app
+go through <a href="/docs/internals/gitops/">Git</a>. As such, manual rollout
+changes will take a few moments to apply.</em>
+</blockquote>
+
+<h4 id="canary-deployments">
+  Canary Deployments
+  <a class="anchor" href="#canary-deployments">#</a>
+</h4>
+<p>A Canary style deployment can be achieved by deploying with the <code>--manual-rollout</code> flag.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser deploy <span style="color:#f92672">(</span>docker tag<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>targetEnvironment<span style="color:#f92672">)</span> --manual-rollout
+</code></pre></div><p><code>riser status</code> will now show two active <em>Revisions</em> for your <em>Deployment</em>. For example:</p>
+<p><img src="/riser_status_manual_rollout_0.png" alt="riser status" /></p>
+<p>At this point, the new <em>Revision</em> is not receiving any traffic. In addition to
+reviewing traditional metrics and logging, you may also access the <em>Revision</em> directly
+using the URL format: <code>https://r{revNumber}-{deployment}.{namespace}.{riserdomain}</code>
+(e.g. <code>https://r2-testdummy.apps.dev.mydomain.net</code>).
+See the <a href="/docs/concepts/url_routing/">URL Routing</a>
+section for more details.</p>
+<p>You may now use the <code>riser rollout</code> command to route a percentage of traffic to the
+new <em>Revision</em>. The following example routes 10% of traffic to a new <em>Revision</em> (#11),
+and 90% of traffic to the old <em>Revision</em> (#10).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser rollout dev r11:10 r10:90
+</code></pre></div><p>You may rollout the new <em>Revision</em> in as many or little steps as you wish. To route
+100% of the traffic to the new <em>Revision</em>, simply specify a single traffic rule.
+For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser rollout dev r11:100
+</code></pre></div><blockquote class="book-hint info">
+  ℹ️ <em>While the information in this section implies manual steps, such
+as validating health metrics and initiating several <code>riser rollout</code> commands, it is
+encouraged to consider implementing these steps as part of an automated
+<a href="https://martinfowler.com/bliki/DeploymentPipeline.html">Deployment Pipeline</a>.</em>
+</blockquote>
+
+<h4 id="rollback">
+  Rollback
+  <a class="anchor" href="#rollback">#</a>
+</h4>
+<p>A rollback is useful when there is a fatal problem with a <em>Deployment</em> that cannot be
+quickly fixed or &ldquo;rolled forward&rdquo;. Because a
+<a href="/docs/concepts/deployments/#revisions">Revision</a>
+in Riser contains a snapshot of all configuration state, it provides a &ldquo;true rollback&rdquo;
+of all state related to a <em>Deployment</em>.</p>
+<p>Similar to a Canary style deployment, you may use
+the <code>riser rollout</code> command to rollback to a previous <em>Revision</em>. Simply specify
+the desired revision and route 100% of traffic to it. The following example
+routes 100% of traffic to <em>Revision</em> #10 in the <code>dev</code> environment:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser rollout dev r10:100
+</code></pre></div><blockquote class="book-hint info">
+  💡 TIP: <em>You may use the
+<code>riser status --all-revisions</code> command to show all available revisions.</em>
+</blockquote>
+
+<h3 id="garbage-collection">
+  Garbage Collection
+  <a class="anchor" href="#garbage-collection">#</a>
+</h3>
+<p>While this history of each <em>Revision</em> will always be present in the
+<a href="/docs/internals/gitops/">Git state repo</a>, the <em>Revision</em> itself will
+be garbage collected from the server based on criteria set by the platform operator.
+Typically at least 10 <em>Revisions</em> will be preserved. Once a <em>Revision</em> is garbage
+collected it is no longer visible to Riser.</p>
+<h2 id="named-deployments">
+  Named Deployments
+  <a class="anchor" href="#named-deployments">#</a>
+</h2>
+<p>Sometimes you&rsquo;d like to test a different build of your <em>App</em> without needing a
+completely separate environment. To accommodate this, Riser supports a naming
+your deployments. The name of your <em>Deployment</em> must:</p>
+<ul>
+<li>Include your <em>App</em> name as the prefix, followed by a dash, followed by one or more
+lowercase letters, numbers, or dashes.</li>
+<li>Must not collide with any other <em>Deployment</em> name regardless of the <em>App</em> or
+the <em>Environment</em> that a <em>Deployment</em> is deployed to.</li>
+</ul>
+<p>Many deployment related operations carry the optional <code>--name</code> flag to specify the
+name of your deployment. The following example creates a <em>Deployment</em> named
+<code>testdummy-pr-15</code> for the <code>testdummy</code> <em>App</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser deploy dev 0.1.2 --name testdummy-pr-15
+</code></pre></div><p>You may access the named <em>Deployment</em>
+using the URL format: <code>https://{deploymentName}.{namespace}.{riserdomain}</code>
+(e.g. <code>https://testdummy-pr-15.apps.dev.mydomain.net</code>).
+See the <a href="/docs/concepts/url_routing/">URL Routing</a> for more details.</p>
+<p><code>riser status</code> will show the status for all deployments associated with your <em>App</em>.
+For example:</p>
+<p><img src="/riser_status_named_deployment.png" alt="riser status" /></p>
+<p>Some points to observe:</p>
+<ul>
+<li>A named <em>Deployment</em> gets its own unique <em>Revision</em> number. There is no correlation
+between revision numbers between different <em>Deployment</em> names.</li>
+<li>You may control traffic routing via the <code>riser rollout</code> command with the <code>--name</code>
+parameter. Note that you may not route between deployments with different names.</li>
+</ul>
+<h2 id="deleting-a-deployment">
+  Deleting a Deployment
+  <a class="anchor" href="#deleting-a-deployment">#</a>
+</h2>
+<p>Some deployments, particularly for named deployments, are ephemeral. For example,
+let&rsquo;s say that your deployment pipeline creates
+a named deployment for every pull request. You may wish to add a automation to
+automatically delete the deployment after the pull request is merged. Deleting
+a deployment is simple:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">riser deployments delete &lt;deploymentName&gt;
+</code></pre></div><blockquote class="book-hint danger">
+  ❌ Danger Zone: <em>Deleting a Deployment deletes all associated
+Revisions along with it. You will still be able to review the history in
+<a href="/docs/internals/gitops/">Git</a>, but Riser does not provide any
+sort of &ldquo;undelete&rdquo; mechanism. You may always create a new Deployment with similar
+configuration, realizing that there are no guarantees that the Deployment will be
+in the same state</em>
+</blockquote>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/riserplatform/docs/commit/4f669608408425016a8e0c7a420d678abbaaf3aa" title='Last modified by tshak | July 31, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>July 31, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/riserplatform/docs/edit/main//docs/concepts/deployments.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-a-deployment">Creating a Deployment</a></li>
+    <li><a href="#deployment-status">Deployment Status</a>
+      <ul>
+        <li><a href="#status-columns">Status Columns</a></li>
+      </ul>
+    </li>
+    <li><a href="#revisions">Revisions</a>
+      <ul>
+        <li><a href="#automatic-rollout">Automatic Rollout</a></li>
+        <li><a href="#manual-rollout">Manual Rollout</a></li>
+        <li><a href="#garbage-collection">Garbage Collection</a></li>
+      </ul>
+    </li>
+    <li><a href="#named-deployments">Named Deployments</a></li>
+    <li><a href="#deleting-a-deployment">Deleting a Deployment</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

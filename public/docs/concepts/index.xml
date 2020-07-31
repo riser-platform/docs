@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concepts on Riser Platform</title>
+    <link>https://docs.riser.dev/docs/concepts/</link>
+    <description>Recent content in Concepts on Riser Platform</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://docs.riser.dev/docs/concepts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/concepts/apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/concepts/apps/</guid>
+      <description>Apps #  An App in Riser represents a stateless workload such as websites, REST APIs, GraphQL, or GRPC style APIs. Riser aims to be compliant with little to no code changes for apps that follow the 12 Factor App methodology.
+Creating an App #  An App is identified by its Name and its Namespace. To create a new App, create a new folder and/or cd into a folder of an existing application and type riser apps init (app name).</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/concepts/deployments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/concepts/deployments/</guid>
+      <description>Deployments #  A Deployment in Riser describes the desired state of a deployed App to a given Environment.
+Creating a Deployment #  The primary mechanism for deploying your App is via the Riser CLI using the riser deploy command from inside of your app folder. Like Kubernetes, Riser works with Docker. Riser does not build or publish Docker images for you. See the Docker section for more details.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/concepts/environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/concepts/environments/</guid>
+      <description>Environments #  An Environment in Riser represents a deployment environment. There is a one-to-one mapping between a Kubernetes cluster and an Environment. Riser has no restrictions on how or what environments you have or how those environments are used.
+Creating an Environment #  An Environment is created when the Riser Controller is installed to a Kubernetes cluster and configured with desired Environment name.
+Deleting an Environment #  Deleting an Environment has not yet been implemented.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/concepts/namespaces/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/concepts/namespaces/</guid>
+      <description>Namespaces #  A Riser Namespace has a one to one correlation with a Kubernetes Namespace. Namespaces provide a scope for names. App names of need to be unique within a Namespace, but not across Namespaces. Most Riser operations do not require specifying a Namespace. The default Namespace in Riser is named apps.
+Creating a Namespace #  Use riser namespaces new (namespace name) to create a new Namespace.
+Deleting a Namespace #  Deleting a Namespace has not yet been implemented.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/concepts/secrets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/concepts/secrets/</guid>
+      <description>Secrets #  A Secret allows you to manage the lifecyle of sensitive information inside of Riser. Riser takes advantage of Public Key Infrastructure to provide a mechanism that allows for the secure management of sensitive values within a GitOps environment.
+To learn more about the architecture of this feature, review the Secrets Internals section.
+ℹ️ Other than a brief moment during the encryption phase, Riser does not have access to your Secrets.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/concepts/url_routing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/concepts/url_routing/</guid>
+      <description>URL Routing #  Riser offers simple routing for a few common scenarios. The examples on this page assume the following configuration unless otherwise specified:
+ Deployment Name: testdummy Namespace: apps Domain name: dev.myplatform.net  Domain Name #  Each Environment can have its own domain name. It is recommended, although not required, to use the same base domain name across all Environments with a subdomain named the same as the Environment name.</description>
+    </item>
+    
+  </channel>
+</rss>

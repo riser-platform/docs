@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Internals on Riser Platform</title>
+    <link>https://docs.riser.dev/docs/internals/</link>
+    <description>Recent content in Internals on Riser Platform</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://docs.riser.dev/docs/internals/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/internals/gitops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/internals/gitops/</guid>
+      <description>GitOps #  Riser is built on the principles of GitOps. Every change that Riser makes happens via a State Repo, a Git repository which holds a versioned account of all Kubernetes state. Whenever you issue a command in Riser (e.g. to make a Deployment), Riser makes a commit to the State Repo with the desired changes on your behalf. Each Kubernetes cluster watches for changes in the GitOps repo and applies those changes on a continuous basis.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://docs.riser.dev/docs/internals/secrets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.riser.dev/docs/internals/secrets/</guid>
+      <description>Secrets #  Riser Secrets is built on Bitnami Sealed Secrets, a project which takes advantage of Public Key Infrastructure to provide a mechanism that allows for the secure management of sensitive values within a GitOps environment.
+Architecture #  The Riser Controller watches the public key on each cluster and keeps the Riser Server up-to-date. Riser never needs access to the private keys. Riser only has access to the plaintext secret in memory for the brief moment of time that is necessary to encrypt the secret with the public key.</description>
+    </item>
+    
+  </channel>
+</rss>

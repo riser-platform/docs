@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="URL Routing #  Riser offers simple routing for a few common scenarios. The examples on this page assume the following configuration unless otherwise specified:
+ Deployment Name: testdummy Namespace: apps Domain name: dev.myplatform.net  Domain Name #  Each Environment can have its own domain name. It is recommended, although not required, to use the same base domain name across all Environments with a subdomain named the same as the Environment name.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="URL Routing #  Riser offers simple routing for a few common scenarios. The examples on this page assume the following configuration unless otherwise specified:
+ Deployment Name: testdummy Namespace: apps Domain name: dev.myplatform.net  Domain Name #  Each Environment can have its own domain name. It is recommended, although not required, to use the same base domain name across all Environments with a subdomain named the same as the Environment name." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://docs.riser.dev/docs/concepts/url_routing/" />
+<meta property="article:modified_time" content="2020-07-31T11:58:34+02:00" />
+<title>Url Routing | Riser Platform</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6cd8553a6854f4812343f0f0c8baca31271e686434f381fbe3c7226f66639176.css" integrity="sha256-bNhVOmhU9IEjQ/DwyLrKMSceaGQ084H748cib2ZjkXY=">
+<script defer src="/en.search.min.3b26788883aaa6da97ae44247c6d81733498c568039fe8001d4a3c38fa85e103.js" integrity="sha256-OyZ4iIOqptqXrkQkfG2BczSYxWgDn&#43;gAHUo8OPqF4QM="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><img src="/logo.png" alt="Logo" /><span>Riser Platform</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quickstart/" class="">Quickstart</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <span>Concepts</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/apps/" class="">Apps</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/deployments/" class="">Deployments</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/environments/" class="">Environments</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/namespaces/" class="">Namespaces</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/secrets/" class="">Secrets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/concepts/url_routing/" class="active">Url Routing</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <span>Guidance</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/guidance/docker/" class="">Docker</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/internals/" class="">Internals</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/internals/gitops/" class="">Gitops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/internals/secrets/" class="">Secrets</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/operations/" class="">Internals</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/riser-platform/riser" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Url Routing</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#domain-name">Domain Name</a>
+      <ul>
+        <li><a href="#for-operators">For Operators</a></li>
+      </ul>
+    </li>
+    <li><a href="#external-urls">External URLs</a></li>
+    <li><a href="#cluster-urls">Cluster URLs</a></li>
+    <li><a href="#revision-urls">Revision URLs</a></li>
+    <li><a href="#vanity-urls">Vanity URLs</a>
+      <ul>
+        <li><a href="#dns-cname">DNS CNAME</a></li>
+        <li><a href="#reverse-proxies">Reverse Proxies</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="url-routing">
+  URL Routing
+  <a class="anchor" href="#url-routing">#</a>
+</h1>
+<p>Riser offers simple routing for a few common scenarios. The examples on this page assume the following configuration unless otherwise specified:</p>
+<ul>
+<li>Deployment Name: <code>testdummy</code></li>
+<li>Namespace: <code>apps</code></li>
+<li>Domain name: <code>dev.myplatform.net</code></li>
+</ul>
+<h2 id="domain-name">
+  Domain Name
+  <a class="anchor" href="#domain-name">#</a>
+</h2>
+<p>Each <em>Environment</em> can have its own domain name. It is recommended, although not required, to use the same base domain name across all <em>Environments</em> with a subdomain named the same as the <em>Environment</em> name. For example, for the domain name <code>myplatform.net</code>, the <code>dev</code> <em>Environment</em> should have the domain <code>dev.myplatform.net</code>, and the <code>prod</code> <em>Environment</em> should have the domain <code>prod.myplatform.net</code>.</p>
+<h3 id="for-operators">
+  For Operators
+  <a class="anchor" href="#for-operators">#</a>
+</h3>
+<p>Review the <a href="https://knative.dev/docs/serving/using-a-custom-domain/">Knative docs</a> for setting up a domain in each cluster. Riser reads the Knative configuration in each cluster and maps the domain to the environment. At this time Riser only supports a single domain per <em>Environment</em>.</p>
+<h2 id="external-urls">
+  External URLs
+  <a class="anchor" href="#external-urls">#</a>
+</h2>
+<p>By default, <em>Apps</em> are exposed <em>externally</em>, meaning outside of the cluster&rsquo;s <a href="https://istio.io/latest/docs/concepts/what-is-istio/#what-is-a-service-mesh">service mesh</a>. Depending on how your network architecture is set up, this could mean
+exposing your <em>App</em> to your private network or to the general public (note: See the <a href="#vanity-urls">Vanity URLs</a> section below for additional recommendations on public exposure)</p>
+<p><strong>URL Pattern</strong>: <code>https://{deploymentName}.{namespace}.{riserDomain}</code></p>
+<p><strong>Example</strong>: <code>https://testdummy.apps.dev.myplatform.net</code></p>
+<blockquote class="book-hint info">
+  ℹ️ <em>The Deployment name is the App name by default</em>
+</blockquote>
+
+<blockquote class="book-hint info">
+  ℹ️ <em>If you do not wish to expose your App externally, set the <code>expose.scope</code> property to <code>cluster</code> in your <a href="https://github.com/riser-platform/riser/blob/main/examples/app.yaml">App Config</a></em>
+</blockquote>
+
+<h2 id="cluster-urls">
+  Cluster URLs
+  <a class="anchor" href="#cluster-urls">#</a>
+</h2>
+<p>The cluster URL is useful if you have an <em>App</em> that takes a dependency on another <em>App</em> in the same Kubernetes cluster. Currently there is a 1:1 relationship between a Riser <em>Environment</em> and a Kubernetes cluster.</p>
+<p><strong>URL Pattern</strong>: <code>http://{deploymentName}.{namespace}.svc.cluster.local</code></p>
+<p><strong>Example</strong>: <code>http://testdummy.apps.svc.cluster.local</code></p>
+<blockquote class="book-hint info">
+  ℹ️ <em>A future version of Riser may require security policy changes in order to communicate between Apps in different namespaces</em>
+</blockquote>
+
+<h2 id="revision-urls">
+  Revision URLs
+  <a class="anchor" href="#revision-urls">#</a>
+</h2>
+<p>Riser provides the ability to access a specific <em>Deployment Revision</em> directly.</p>
+<p><strong>URL Pattern</strong>: <code>https://r{revisionNumber}-{deploymentName}.{namespace}.{riserDomain}</code> <em>or</em> <code>http://r{revisionNumber}-{deploymentName}.{namespace}.svc.cluster.local</code></p>
+<p><strong>Example</strong>: <code>https://r2-testdummy.apps.dev.myplatform.net</code></p>
+<p>See the <a href="/docs/concepts/deployments/#revisions">Revisions</a> section for more details.</p>
+<h2 id="vanity-urls">
+  Vanity URLs
+  <a class="anchor" href="#vanity-urls">#</a>
+</h2>
+<p>Because there are many different approaches to managing URLs and frontend proxies, Riser does not have explicit support for Vanity URls. The following section provides examples of various approaches but is not intended to be exhaustive.</p>
+<h3 id="dns-cname">
+  DNS CNAME
+  <a class="anchor" href="#dns-cname">#</a>
+</h3>
+<p>If your load balancer is accessible to the network in which you plan to expose your app (e.g. the public internet or your company intranet), you may wish to use a simple <a href="https://en.wikipedia.org/wiki/CNAME_record">CNAME record</a> in your DNS server. For example:</p>
+<pre><code>testdummy.org.        CNAME  testdummy.apps.prod.myplatform.net.
+</code></pre><p>For public websites, you may wish to consider a CDN such as <a href="https://www.cloudflare.com/">Cloudflare</a> or <a href="https://www.akamai.com/">Akamai</a>.</p>
+<h3 id="reverse-proxies">
+  Reverse Proxies
+  <a class="anchor" href="#reverse-proxies">#</a>
+</h3>
+<p>Reverse proxies can provide more sophisticated routing scenarios such as additional authentication options, path based routing, etc. Since Riser prescribes the use of <a href="https://istio.io/">Istio</a>, you may consider leveraging it for your routing needs. Alternatively, some find proxies such as <a href="https://www.nginx.com/">Nginx</a> or <a href="https://konghq.com/">Kong</a> or better suited to their needs.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/riserplatform/docs/commit/4f669608408425016a8e0c7a420d678abbaaf3aa" title='Last modified by tshak | July 31, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>July 31, 2020</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/riserplatform/docs/edit/main//docs/concepts/url_routing.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#domain-name">Domain Name</a>
+      <ul>
+        <li><a href="#for-operators">For Operators</a></li>
+      </ul>
+    </li>
+    <li><a href="#external-urls">External URLs</a></li>
+    <li><a href="#cluster-urls">Cluster URLs</a></li>
+    <li><a href="#revision-urls">Revision URLs</a></li>
+    <li><a href="#vanity-urls">Vanity URLs</a>
+      <ul>
+        <li><a href="#dns-cname">DNS CNAME</a></li>
+        <li><a href="#reverse-proxies">Reverse Proxies</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
