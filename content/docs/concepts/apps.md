@@ -52,6 +52,10 @@ in Github.
 
 Once you're app is configured, you're ready to move move in to [Deployments]({{< relref "/docs/concepts/deployments.md" >}})
 
+## Deleting an App
+
+Deleting an _App_ has not yet been implemented.
+
 
 
 

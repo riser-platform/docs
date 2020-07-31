@@ -5,3 +5,7 @@ A Riser _Namespace_ has a one to one correlation with a [Kubernetes Namespace](h
 ## Creating a Namespace
 
 Use `riser namespaces new (namespace name)` to create a new _Namespace_.
+
+## Deleting a Namespace
+
+Deleting a _Namespace_ has not yet been implemented.

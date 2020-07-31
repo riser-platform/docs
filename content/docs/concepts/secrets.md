@@ -19,7 +19,7 @@ There are some important considerations to consider when using this feature:
 Use `riser secrets save (name) (plaintextsecret) (targetEnvironment)` from inside your app folder to save a secret. For example, to save a postgres URL to the `dev` environment:
 
 ```sh
-riser secrets save POSTGRES_URL "postgres://user:secretPW@dev.mypostgreshost.net/mydb" dev
+riser secrets save POSTGRES_URL "postgres://user:s3cr3t@postgres.net/mydb" dev
 ```
 
 You should now see your secret using the command `riser secrets list (environment)`
@@ -85,7 +85,9 @@ riser deploy v1 dev
 :information_source: _You never need to worry about the specific Secret Revisions. Riser manages which Deployment Revision maps to which Secret Revision for you so that you don't have to._
 {{< /hint >}}
 
+## Deleting a Secret
 
+Deleting a _Secret_ has not yet been implemented.
 
 
 

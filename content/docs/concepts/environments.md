@@ -12,3 +12,6 @@ An _Environment_ is created when the
 [Riser Controller](https://github.com/riser-platform/riser-controller)
 is installed to a Kubernetes cluster and configured with desired _Environment_ name.
 
+## Deleting an Environment
+
+Deleting an _Environment_ has not yet been implemented.

@@ -31,9 +31,8 @@ it easy to integrate with all popular CI/CD systems.
 {{< /hint >}}
 
 Once the _Deployment_ is complete, you may access it using the URL format:
-`https://<app>.<namespace>.<riserdomain>`
-(e.g. for an app named `testdummy` in the `apps` namespace deployed to the `dev`
-environment hosted on the `mydomain.net` domain:
+`https://{deploymentName}.{namespace}.{riserdomain}`. Note that the _Deployment_ name is the same as your _App_ name by default.
+(e.g. for an app named `testdummy` in the `apps` namespace with an _Environment_ configured with the `dev.mydomain.net` domain:
 `https://testdummy.apps.dev.mydomain.net`).
 See the [URL Routing]({{< relref "/docs/concepts/url_routing.md" >}})
 section for more details.
@@ -117,7 +116,7 @@ riser deploy (docker tag) (targetEnvironment) --manual-rollout
 
 At this point, the new _Revision_ is not receiving any traffic. In addition to
 reviewing traditional metrics and logging, you may also access the _Revision_ directly
-using the URL format: `https://r<rev#>-<deployment>.<namespace>.<riserdomain>`
+using the URL format: `https://r{revNumber}-{deployment}.{namespace}.{riserdomain}`
 (e.g. `https://r2-testdummy.apps.dev.mydomain.net`).
 See the [URL Routing]({{< relref "/docs/concepts/url_routing.md" >}})
 section for more details.
@@ -192,7 +191,7 @@ riser deploy dev 0.1.2 --name testdummy-pr-15
 ```
 
 You may access the named _Deployment_
-using the URL format: `https://<deploymentName>.<namespace>.<riserdomain>`
+using the URL format: `https://{deploymentName}.{namespace}.{riserdomain}`
 (e.g. `https://testdummy-pr-15.apps.dev.mydomain.net`).
 See the [URL Routing]({{< relref "/docs/concepts/url_routing.md" >}}) for more details.
 
