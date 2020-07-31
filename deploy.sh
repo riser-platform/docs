@@ -3,8 +3,6 @@ set -e
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
-git checkout master
-
 # Build the project.
 hugo
 
@@ -22,6 +20,3 @@ git commit -m "$msg"
 # Push source and build repos.
 git push origin master
 
-git checkout main
-
-cd ..
