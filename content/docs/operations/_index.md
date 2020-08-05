@@ -1,5 +1,5 @@
 ---
-title: Internals
+title: Operations
 type: docs
 ---
 
