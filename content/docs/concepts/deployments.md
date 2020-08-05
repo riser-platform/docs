@@ -218,11 +218,11 @@ a deployment is simple:
 riser deployments delete <deploymentName>
 ```
 
-{{< hint danger >}}
-:x: Danger Zone: _Deleting a Deployment deletes all associated
+{{< danger >}}
+**Danger Zone!** Deleting a Deployment deletes all associated
 Revisions along with it. You will still be able to review the history in
 [Git]({{< relref "/docs/internals/gitops.md" >}}), but Riser does not provide any
 sort of "undelete" mechanism. You may always create a new Deployment with similar
 configuration, realizing that there are no guarantees that the Deployment will be
-in the same state_
-{{< /hint >}}
+in the same state
+{{< /danger >}}
