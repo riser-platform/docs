@@ -24,11 +24,11 @@ is `prod`:
 riser deploy v1.0 prod
 ```
 
-{{< hint info >}}
-:information_source: Most users will prefer to trigger a deployment from a CI/CD system
+{{< tip >}}
+Most users will prefer to trigger a deployment from a CI/CD system
 instead of manually executing the command. The Riser CLI is a single binary making
 it easy to integrate with all popular CI/CD systems.
-{{< /hint >}}
+{{< /tip >}}
 
 Once the _Deployment_ is complete, you may access it using the URL format:
 `https://{deploymentName}.{namespace}.{riserdomain}`. Note that the _Deployment_ name is the same as your _App_ name by default.
@@ -98,11 +98,11 @@ rollout.
 - Rollback: There is a critical problem with a deployment that cannot be quickly
 fixed or "rolled forward"
 
-{{< hint info >}}
-:information_source: _Remember that all operations that affect the state of your app
+{{< tip >}}
+Remember that all operations that affect the state of your app
 go through [Git]({{< relref "/docs/internals/gitops.md" >}}). As such, manual rollout
- changes will take a few moments to apply._
-{{< /hint >}}
+ changes will take a few moments to apply.
+{{< /tip >}}
 
 #### Canary Deployments
 A Canary style deployment can be achieved by deploying with the `--manual-rollout` flag.
@@ -137,12 +137,12 @@ For example:
 riser rollout dev r11:100
 ```
 
-{{< hint info >}}
-:information_source: _While the information in this section implies manual steps, such
+{{< tip >}}
+While the information in this section implies manual steps, such
 as validating health metrics and initiating several `riser rollout` commands, it is
 encouraged to consider implementing these steps as part of an automated
-[Deployment Pipeline](https://martinfowler.com/bliki/DeploymentPipeline.html)._
-{{< /hint >}}
+[Deployment Pipeline](https://martinfowler.com/bliki/DeploymentPipeline.html).
+{{< /tip >}}
 
 #### Rollback
 
@@ -161,10 +161,10 @@ routes 100% of traffic to _Revision_ #10 in the `dev` environment:
 riser rollout dev r10:100
 ```
 
-{{< hint info >}}
-:bulb: TIP: _You may use the
-`riser status --all-revisions` command to show all available revisions._
-{{< /hint >}}
+{{< tip >}}
+You may use the
+`riser status --all-revisions` command to show all available revisions.
+{{< /tip >}}
 
 ### Garbage Collection
 While this history of each _Revision_ will always be present in the

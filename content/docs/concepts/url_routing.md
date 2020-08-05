@@ -21,13 +21,13 @@ exposing your _App_ to your private network or to the general public (note: See 
 
 **Example**: `https://testdummy.apps.dev.myplatform.net`
 
-{{< hint info >}}
-:information_source: _The Deployment name is the App name by default_
-{{< /hint >}}
+{{< tip >}}
+The Deployment name is the App name by default
+{{< /tip >}}
 
-{{< hint info >}}
-:information_source: _If you do not wish to expose your App externally, set the `expose.scope` property to `cluster` in your [App Config](https://github.com/riser-platform/riser/blob/main/examples/app.yaml)_
-{{< /hint >}}
+{{< tip >}}
+If you do not wish to expose your App externally, set the `expose.scope` property to `cluster` in your [App Config](https://github.com/riser-platform/riser/blob/main/examples/app.yaml)
+{{< /tip >}}
 
 ## Cluster URLs
 The cluster URL is useful if you have an _App_ that takes a dependency on another _App_ in the same Kubernetes cluster. Currently there is a 1:1 relationship between a Riser _Environment_ and a Kubernetes cluster.
@@ -36,9 +36,9 @@ The cluster URL is useful if you have an _App_ that takes a dependency on anothe
 
 **Example**: `http://testdummy.apps.svc.cluster.local`
 
-{{< hint info >}}
-:information_source: _A future version of Riser may require security policy changes in order to communicate between Apps in different namespaces_
-{{< /hint >}}
+{{< tip >}}
+A future version of Riser may require security policy changes in order to communicate between Apps in different namespaces
+{{< /tip >}}
 
 ## Revision URLs
 Riser provides the ability to access a specific _Deployment Revision_ directly.

@@ -4,9 +4,9 @@ A _Secret_ allows you to manage the lifecyle of sensitive information inside of 
 
 To learn more about the architecture of this feature, review the [Secrets Internals]({{< relref "docs/internals/secrets.md" >}}) section.
 
-{{< hint info >}}
-:information_source: _Other than a brief moment during the encryption phase, Riser does not have access to your Secrets. Riser does not need access to your secrets or your private keys on your Kubernetes clusters._
-{{< /hint >}}
+{{< tip >}}
+Other than a brief moment during the encryption phase, Riser does not have access to your Secrets. Riser does not need access to your secrets or your private keys on your Kubernetes clusters.
+{{< /tip >}}
 
 ## Saving a Secret
 There are some important considerations to consider when using this feature:
@@ -58,9 +58,9 @@ riser secrets save FOO fooval2 dev
 riser deploy v1 dev
 ```
 
-{{< hint info >}}
-:information_source: _It's okay to deploy the same Docker tag multiple times (e.g. `v1` in this example). Riser considers all configuration as code, including secrets. Riser will still create a new Deployment Revision even though you are deploying with the same Docker tag._
-{{< /hint >}}
+{{< tip >}}
+It's okay to deploy the same Docker tag multiple times (e.g. `v1` in this example). Riser considers all configuration as code, including secrets. Riser will still create a new Deployment Revision even though you are deploying with the same Docker tag.
+{{< /tip >}}
 
 **Current State:** The environment variable `FOO` now has the value `fooval2` in the `dev` _Environment_. The _Deployment_ _Revision_ is `3`.
 
@@ -81,9 +81,9 @@ riser deploy v1 dev
 **Current State:** The environment variable `FOO` now has the value `fooval2` in the `dev` _Environment_. The _Deployment_ _Revision_ is `4`.
 
 
-{{< hint info >}}
-:information_source: _You never need to worry about the specific Secret Revisions. Riser manages which Deployment Revision maps to which Secret Revision for you so that you don't have to._
-{{< /hint >}}
+{{< tip >}}
+You never need to worry about the specific Secret Revisions. Riser manages which Deployment Revision maps to which Secret Revision for you so that you don't have to.
+{{< /tip >}}
 
 ## Deleting a Secret
 

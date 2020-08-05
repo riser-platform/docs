@@ -2,9 +2,9 @@
 
 Riser is built on the [principles of GitOps](https://www.weave.works/technologies/gitops/). Every change that Riser makes happens via a _State Repo_, a Git repository which holds a versioned account of all Kubernetes state. Whenever you issue a command in Riser (e.g. to make a [Deployment]({{< relref "/docs/concepts/deployments.md" >}})), Riser makes a commit to the _State Repo_ with the desired changes on your behalf. Each Kubernetes cluster watches for changes in the GitOps repo and applies those changes on a continuous basis.
 
-{{< hint info >}}
-:information_source: _You do not need to interact with the State Repo as part of normal Riser operations. The State Repo is useful for auditing (e.g. who changed what and when) and for debugging (e.g. what is the current state of my Deployment)_
-{{< /hint >}}
+{{< tip >}}
+You do not need to interact with the State Repo as part of normal Riser operations. The State Repo is useful for auditing (e.g. who changed what and when) and for debugging (e.g. what is the current state of my Deployment)
+{{< /tip >}}
 
 ## The State Repo
 
