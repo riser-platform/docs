@@ -9,9 +9,10 @@ Riser is an opinionated app platform built on [Kubernetes](https://kubernetes.io
 
 [![asciicast](https://asciinema.org/a/350860.svg)](https://asciinema.org/a/350860?autoplay=1&cols=160&rows=40)
 
-{{< hint warning >}} :warning: _This is an experimental project. You're invited to look around and provide feedback.
-It is not yet advised to use Riser in production. Breaking changes may occur frequently and without warning._
-{{< /hint >}}
+{{< warn >}}
+This is an experimental project. You're invited to look around and provide feedback.
+It is not yet advised to use Riser in production. Breaking changes may occur frequently and without warning.
+{{< /warn >}}
 
 ## Key Features
 

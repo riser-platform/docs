@@ -21,10 +21,11 @@ You must also have a GitHub account for the state repo. Riser will support other
 These dependencies are just for running a local demo of Riser. Typical users of Riser will not need these dependencies.
 {{< /tip >}}
 
-{{< hint warning >}} :warning: _**Windows Users**: A Windows release is available but has not yet been tested. It's recommended that you use the
+{{< warn >}}
+**Windows Users**: A Windows release is available but has not yet been tested. It's recommended that you use the
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/faq) for
-the Riser CLI._
-{{< /hint >}}
+the Riser CLI.
+{{< /warn >}}
 
 ## Demo Installation
 

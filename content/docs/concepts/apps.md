@@ -12,9 +12,9 @@ create a new folder and/or cd into a folder of an existing application and type
 with an initial _App Config_ saved to `app.yaml`.
 
 
-{{< hint warning >}}
-:warning: _You may not change the name or namespace of your App after it is created._
-{{< /hint >}}
+{{< warn >}}
+You may not change the name or namespace of your App after it is created.
+{{< /warn >}}
 
 ## Configuring your App
 

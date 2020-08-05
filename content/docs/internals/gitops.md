@@ -12,9 +12,9 @@ You do not need to interact with the State Repo as part of normal Riser operatio
 
 Riser manages the folder structure of the _State Repo_ for you. This section is useful to help you navigate the _State Repo_ for auditing or debugging purposes, or if you wish to use the _State Repo_ for Kubernetes state that is not managed by Riser.
 
-{{< hint warning >}}
-:warning: _Riser is the source of truth for all resources managed by Riser. Riser makes no attempt to merge any changes with Riser's desired state and the state of the repo. Do not modify any Riser managed resources in the State Repo._
-{{< /hint >}}
+{{< warn >}}
+Riser is the source of truth for all resources managed by Riser. Riser makes no attempt to merge any changes with Riser's desired state and the state of the repo. Do not modify any Riser managed resources in the State Repo.
+{{< /warn >}}
 
 #### Annotated Example
 The following is an example of a _State Repo_ with two environments, "dev" and "prod", and an _App_ with a _Deployment_ named "testdummy" in the "apps" namespace.
