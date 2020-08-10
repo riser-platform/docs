@@ -11,14 +11,15 @@ The Riser demo is the easiest way to experiment with Riser.
 ## Prerequisites
 
 Ensure that you have a recent version of the following:
-- [Git CLI](https://git-scm.com/downloads)
+- [Docker](https://www.docker.com/get-started)
 - [Minikube](https://github.com/kubernetes/minikube)
+- [Git CLI](https://git-scm.com/downloads)
 - [Kubectl](https://github.com/kubernetes/kubectl)
 
 You must also have a GitHub account for the state repo. Riser will support other git providers in the future.
 
 {{< tip >}}
-These dependencies are just for running a local demo of Riser. Typical users of Riser will not need these dependencies.
+These dependencies are specifically for running a local demo of a full Riser stack. A typical app developer only needs the Riser client binary.
 {{< /tip >}}
 
 {{< warn >}}
