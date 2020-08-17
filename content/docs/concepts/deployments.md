@@ -3,6 +3,10 @@
 A _Deployment_ in Riser describes the desired state of a deployed _App_ to a given
 [Environment]({{< relref "/docs/concepts/environments.md" >}}).
 
+{{< tip >}}
+A Riser _Deployment_ should not be confused with a Kubernetes Deployment. Any possible relationship with Kubernetes primitives should be treated as an implementation detail.
+{{< /tip >}}
+
 ## Creating a Deployment
 The primary mechanism for deploying your _App_ is via the Riser CLI using the
 `riser deploy` command from inside of your app folder. Like Kubernetes, Riser works with [Docker](https://www.docker.com/).
@@ -59,6 +63,9 @@ regarding the state of your app.
   - **Unknown**: The deployment status is not known
 - _Reason_: When applicable, provides a description of the current _Status_
 
+### Additional Details
+
+To get additional information about a specific _Deployment_, use `riser deployments describe (deploymentName) (targetEnvironment)`. This view provides a additional details beyond that of `riser status` and as a result is limited to a specific _Deployment_ in a target _Environment_.
 
 ## Revisions
 
