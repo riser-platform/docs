@@ -129,6 +129,10 @@ and 90% of traffic to the old _Revision_ (#10).
 riser rollout dev r11:10 r10:90
 ```
 
+{{< tip >}}
+The `riser rollout` command also supports a single wildcard rule. For example: `riser rollout dev r11:10 r10:*` is equivalent to the preceding command.
+{{< /tip >}}
+
 You may rollout the new _Revision_ in as many or little steps as you wish. To route
 100% of the traffic to the new _Revision_, simply specify a single traffic rule.
 For example:
