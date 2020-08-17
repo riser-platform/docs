@@ -6,12 +6,12 @@ weight: 1
 
 # Quickstart
 
-The Riser demo is the easiest way to experiment with Riser.
+The Riser demo allows you to easily experiment with Riser using a local Kubernetes cluster.
 
 ## Prerequisites
 
 Ensure that you have a recent version of the following:
-- [Docker](https://www.docker.com/get-started)
+- [Docker](https://www.docker.com/get-started) (Note: just for client tooling - the Docker daemon does not need to be running)
 - [Minikube](https://github.com/kubernetes/minikube)
 - [Git CLI](https://git-scm.com/downloads)
 - [Kubectl](https://github.com/kubernetes/kubectl)
@@ -33,6 +33,8 @@ the Riser CLI.
 - Enable the minikube ingress addon: `minikube addons enable ingress`
 - Create a minikube cluster. For the best results use the recommended settings: `minikube start --cpus=4 --memory=6144 --kubernetes-version=1.17.7`.
 - Create a GitHub repo for Riser's state (e.g. `https://github.com/your-name/riser-state`).
+  - Create a branch named `main` (Riser allows you to customize the branch name but the demo does not)
+  - Riser requires write access to the repo. It is recommended that you use SSH with a [GitHub deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/) with write access. Riser supports using HTTPS git URLs with authentication such as [GitHub personal access token's](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) as well.
 - Download the [latest Riser CLI](https://github.com/riser-platform/riser/releases/) for your platform and put it in your path.
 - Ensure that your minikube is started. In a new terminal window, run `minikube tunnel`. Ensure it establishes the tunnel and let it run in the background.
 - Run `riser demo install` and follow the instructions.
