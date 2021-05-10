@@ -31,9 +31,8 @@ the Riser CLI.
 ## Demo Installation
 
 - Enable the minikube ingress addon: `minikube addons enable ingress`
-- Create a minikube cluster. For the best results use the recommended settings: `minikube start --cpus=4 --memory=6144 --kubernetes-version=1.17.7`.
+- Create a minikube cluster. For the best results use the recommended settings: `minikube start --cpus=4 --memory=6144 --kubernetes-version=1.17.11`.
 - Create a GitHub repo for Riser's state (e.g. `https://github.com/your-name/riser-state`).
-  - Create a branch named `main` (Riser allows you to customize the branch name but the demo does not)
   - Riser requires write access to the repo. It is recommended that you use SSH with a [GitHub deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/) with write access. Riser supports using HTTPS git URLs with authentication such as [GitHub personal access token's](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) as well.
 - Download the [latest Riser CLI](https://github.com/riser-platform/riser/releases/) for your platform and put it in your path.
 - Ensure that your minikube is started. In a new terminal window, run `minikube tunnel`. Ensure it establishes the tunnel and let it run in the background.
