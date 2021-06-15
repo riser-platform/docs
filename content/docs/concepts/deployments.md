@@ -124,7 +124,7 @@ riser deploy (docker tag) (targetEnvironment) --manual-rollout
 At this point, the new _Revision_ is not receiving any traffic. In addition to
 reviewing traditional metrics and logging, you may also access the _Revision_ directly
 using the URL format: `https://r{revNumber}-{deployment}.{namespace}.{riserdomain}`
-(e.g. `https://r2-testdummy.apps.dev.mydomain.net`).
+(e.g. `https://r11-testdummy.apps.dev.mydomain.net`).
 See the [URL Routing]({{< relref "/docs/concepts/url_routing.md" >}})
 section for more details.
 
@@ -186,7 +186,7 @@ collected it is no longer visible to Riser.
 
 ## Named Deployments
 Sometimes you'd like to test a different build of your _App_ without needing a
-completely separate environment. To accommodate this, Riser supports a naming
+completely separate environment. To accommodate this, Riser supports naming
 your deployments. The name of your _Deployment_ must:
 - Include your _App_ name as the prefix, followed by a dash, followed by one or more
 lowercase letters, numbers, or dashes.
